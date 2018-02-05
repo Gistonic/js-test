@@ -1,7 +1,7 @@
 
 
 window.onload = function(){
-    document.getElementById("patata").innerHTML=velocidad(3,1);
+    document.getElementById("patata").innerHTML=velocidad(5,1);
     document.getElementById("b1").onclick =function()
     										{
     											alert(3);
