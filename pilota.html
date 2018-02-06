@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var x = 150;
+		var y = 150;
+		var dx = 2;
+		var dy = 3;
+		var WIDTH = 300;
+		var HEIGHT = 300;
+		var canPilota;
+		function init(){
+			canPilota = document.getElementById("pilota").getContext("2d");
+		}
+		window.onload = function(){
+			var canPilota = document.getElementById("pilota").getContext("2d");
+			canPilota.beginPath();
+			canPilota.arc(100,100,20,0,Math.PI*2);
+			canPilota.closePath();
+			canPilota.fill(); 	
+			}
+	</script>
+
+</head>
+<body>
+<canvas id="pilota" whith="400" height="400"></canvas>
+</body>
+</html>
