@@ -18,12 +18,19 @@ window.onload = function(){
 	document.getElementById("EliminaDiv").onclick =function()
     										{
     										var element = document.getElementsByTagName(div);
+    										element[0].remove();
+                                        };
+    										/*for (i = 0; i < element.length; i++) { 
+   													  element[i].remove();
+											}
+										};
     										 /*
     										  for ( i = 0 - 1; i <4; i++i) {
     										  		element[i].remove();
     										  	}	
+
     										  //element.remove();										 
-    										};
+    										};*/
     										
    
 }

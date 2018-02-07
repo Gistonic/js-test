@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="Animate.js"></script>
+<style >
+html ,body
+		{
+					height: 100%;
+					width: 100%;
+					margin:0;
+					padding: 0;
+		}
+
+		div{
+			 position :relative;
+			height: 10%;
+			width: 30%;
+			background-color: lightblue;
+			
+			
+			
+			
+		}
+		#rotate{
+			 animation: mymove 5s infinite;
+		}
+	
+		@keyframes mymove {
+    		from {top: 0px;
+    				background: url("locked.png");
+    				transform: rotateY(0deg);}
+    		to {top: 0px;
+    			background: url("lockedOpen.png");
+    			transform: rotateY(180deg);}
+		}
+
+
+
+</style>
+	<title></title>
+</head>
+<body>
+<div id="rotate" >
+</div>
+<br>
+<div id="BigLit" >
+</div>
+<button>
+	max min
+</button>
+
+
+
+
+
+</body>
+</html>
