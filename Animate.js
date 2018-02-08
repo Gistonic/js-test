@@ -1,8 +1,12 @@
+  var idPokemon=1 ;
+
+
 $( window ).on( "load", function() { 
     var min = true;
-    var idPokemon=1 ;
+  
+    getPokemon(idPokemon);
 
-    $( "button" ).click( function() {
+    $( "#maxMin"  ).click( function() {
         if(min){
             $( "#BigLit" ).animate({
             width: "70%",
@@ -27,29 +31,55 @@ $( window ).on( "load", function() {
          min=!min;
     });
 
+
+     $( "#last" ).click( function() {
+        if(idPokemon> 1){
+            idPokemon-=1;
+            getPokemon(idPokemon);
+        }
+
+    });
+      $( "#Next" ).click( function() {
+        idPokemon+=1;
+         getPokemon(idPokemon);
+    
+    });
+
+      $( "#Search" ).click( function() {
+       
+       idPokemon=$("#idSearch").val();
+
+
+         getPokemon(idPokemon);
+         $("#idSearch").val(" ");
+     
+    
+    });
         
-        $.get( " https://www.pokeapi.co/api/v2/pokemon/"+idPokemon+"/",  function( data ) {
-          // data = data received
-          // as we used the "json" argument at the end, data is parsed JSON
-          $("#ID").prepend(data.id);
-          
-          $("#nameP").append( data.name);
-          $("#type").append(data.types[0].type.name)
-          $("#Shiny").append("<img src="+ data.sprites.front_shiny+">")
-          $("#Normal").append("<img src="+ data.sprites.front_default+">")
 
-         // alert(data.name);
-          /*
-            if we have received {name:"john"}, data.name = john
 
-            if the object is like [{name:"john"}], to retrieve "john" we would 
-                need data[0].name
 
-            if the object is like {name:["john","chris"]}, to get "chris" we 
-                would need data.name[2]
-          */
-          
-        }, "json" );
+        
 
 
 });
+
+  function getPokemon(idPokemon){
+        $.get( " https://www.pokeapi.co/api/v2/pokemon/"+idPokemon+"/",  function( data ) {
+          // data = data received
+          // as we used the "json" argument at the end, data is parsed JSON
+          $("#ID").html(data.id);
+          
+          $("#nameP").html( data.name);
+          $("#type").html(data.types[0].type.name)
+          $("#Shiny").html("<img src="+ data.sprites.front_shiny+">")
+          $("#Normal").html("<img src="+ data.sprites.front_default+">")
+
+
+   
+        }, "json" );
+
+ 
+
+
+     }

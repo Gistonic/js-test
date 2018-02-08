@@ -11,8 +11,8 @@ html ,body
 					margin:0;
 					padding: 0;
 		}
-		table {
-			border-color: black;
+		table, th, td {
+   			border: 1px solid black;
 		}
 
 		div{
@@ -48,7 +48,11 @@ html ,body
 		    from { transform: rotate(0deg) translateX(50px) rotate(0deg); }
 		    to   { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
 		}
+		#idSearch{
 
+			height: 97%;
+			width:97%;
+		}
 
 </style>
 	<title></title>
@@ -59,6 +63,7 @@ html ,body
 <br>
 <div id="BigLit" >
 </div>
+
 <button id="maxMin">
 	max min
 </button>
@@ -68,11 +73,11 @@ html ,body
 	<table>
 	
 		<tr>
-			<td >ID</td>
-			<td >Normal sprite</td>
-			<td>Shiny sprite</td>
-			<td >Name</td>
-			<td>Type</td>
+			<th> ID</th> 
+			<th >Normal sprite</th>
+			<th>Shiny sprite</th>
+			<th >Name</th>
+			<th>Type</th>
 
 		</tr>
 
@@ -84,16 +89,26 @@ html ,body
 			<td id="type"></td>
 
 		</tr>
-		<tr>
-			<td colspan="2">
-					<button>ww </button>
+
+		
+
+			<tr>
+			<td >
+					<input  id = "last" type="submit"  value="Last">
 			</td>
-			<td id = "Normal"></td>
-			<td id= "Shiny"></td>
-			<td id = "nameP"></td>
-			<td id="type"></td>
+			<td colspan="2" >
+				<input id = "idSearch" type="text" >
+			</td>
+			<td >
+				<input  id = "Search" type="submit" value="Search">
+			</td>
+			<td >
+				<input  id = "Next" type="submit"  value="Next">
+			</td>
+		
 
 		</tr>
+	
 	</table>
 
 </body>
